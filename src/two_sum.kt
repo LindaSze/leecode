@@ -1,5 +1,6 @@
 fun main() {
-    var value = twoSum_v3(intArrayOf(3, 3), 6)
+    //v3,v5较优
+    var value = twoSum_v5(intArrayOf(2, 11,7,15), 9)
     println("twoSum:" + value[0].toString() + "," + value[1])
 
 }
@@ -86,6 +87,57 @@ fun twoSum_v4(nums: IntArray, target: Int): IntArray {
         }
     }
     return throw IllegalArgumentException("")
+}
+
+
+/**
+ * 思路：顺序排列找出索引位置，二次循环找出对应原索引
+ * 执行用时 :212 ms,
+ * 在所有 Kotlin 提交中击败了89.92%的用户
+ * 内存消耗 :37 MB, 在所有 Kotlin 提交中击败了41.18%的用户
+ */
+fun twoSum_v5(nums: IntArray, target: Int): IntArray {
+    var m=-1
+    var n=-1
+    var res = IntArray(2)
+    var temp =  nums.copyOf()
+
+    var i = 0
+    var j = nums.size-1
+    nums.sort()
+    while (i < j) {
+        if (nums[i] + nums[j] < target)
+            i++
+        else if (nums[i] + nums[j] > target)
+            j--
+        else if (nums[i] + nums[j] == target) {
+            m = i
+            n = j
+            break
+        }
+    }
+
+    var index1 = -1
+    var index2 = -1
+    for(k in nums.indices){
+        if (temp[k] == nums[m] && index1 == -1 && k != index2) {
+            index1 = k
+        } else if (temp[k] == nums[n] && k != index1 && index2 == -1) {
+            index2 = k
+        }
+        if (index1 != -1 && index2 != -1) {
+            if (index1 > index2) {
+                res[0] = index2
+                res[1] = index1
+            } else {
+                res[0] = index1
+                res[1] = index2
+            }
+            break
+        }
+    }
+
+    return res
 }
 
 
