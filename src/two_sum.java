@@ -1,17 +1,20 @@
+
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class two_sum {
 
     public static void main(String args[]) {
+        //v2最优，其次v3
         int[] value = twoSum_v2(new int[]{-1, -2, -3, -4, -5}, -8);
-        System.out.println("lee_java:" + value[0] + "," + value[1]);
+        System.out.println("answer:" + value[0] + "," + value[1]);
     }
 
 
     /**
      * 思路：利用java自带DualPivotQuicksort排序,虽然系统排序算法快，时间复杂度为O(nlogn)
      * 执行用时 :2 ms,
-     * 在所有 Kotlin 提交中击败了99.36%的用户
+     * 在所有 java 提交中击败了99.36%的用户
      * 内存消耗 :37.4 MB,在所有 Java 提交中击败了88.96%
      */
     public int[] twoSum_v1(int[] nums, int target) {
@@ -48,7 +51,7 @@ public class two_sum {
     /**
      * 思路：进一步优化，减少T(n)
      * 执行用时 :2 ms,
-     * 在所有 Kotlin 提交中击败了99.39%的用户
+     * 在所有 java 提交中击败了99.39%的用户
      * 内存消耗 :38.3 MB,在所有 Java 提交中击败了70.04%
      */
     public static int[] twoSum_v2(int[] nums, int target) {
@@ -88,5 +91,26 @@ public class two_sum {
             }
         }
         return res;
+    }
+
+
+
+    /**
+     * 思路：哈希查询
+     * 执行用时 :2 ms,
+     * 在所有 java 提交中击败了97.55%的用户
+     * 内存消耗 :37.1 MB,在所有 Java 提交中击败了92.13%
+     */
+    public int[] twoSum_v3(int[] nums, int target) {
+        HashMap<Integer, Integer> hashmap = new HashMap<>();
+        for (int i = 0, size = nums.length; i < size; i++) {
+            if (hashmap.containsKey(target - nums[i])) {
+                int index2 = hashmap.get(target - nums[i]);
+                if (index2 != i)
+                    return new int[]{index2, i};
+            }
+            hashmap.put(nums[i], i);
+        }
+        return new int[]{0, 0};
     }
 }

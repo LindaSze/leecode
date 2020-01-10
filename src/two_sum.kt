@@ -1,7 +1,7 @@
 fun main() {
-    //v3,v5较优
+    //v0,v5较优
     var value = twoSum_v5(intArrayOf(2, 11,7,15), 9)
-    println("twoSum:" + value[0].toString() + "," + value[1])
+    println("answer:" + value[0].toString() + "," + value[1])
 
 }
 
@@ -58,7 +58,7 @@ fun twoSum_v2(nums: IntArray, target: Int): IntArray {
  * 在所有 Kotlin 提交中击败了89.92%的用户
  * 内存消耗 :36.7 MB, 在所有 Kotlin 提交中击败了47.18%的用户
  */
-fun twoSum_v3(nums: IntArray, target: Int): IntArray {
+fun twoSum_v0(nums: IntArray, target: Int): IntArray {
     var hashmap = hashMapOf<Int, Int>()
     for ((index, num) in nums.withIndex()) {
         if (hashmap.containsKey(target - num)) { //contain的是先找到的那个，set sum是后
@@ -69,7 +69,7 @@ fun twoSum_v3(nums: IntArray, target: Int): IntArray {
         hashmap.set(num, index)  //加入的是第一个数字，后置
     }
 
-    return intArrayOf(0, 0)
+    throw  IllegalArgumentException("No two sum solution");
 }
 
 
