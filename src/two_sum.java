@@ -13,9 +13,7 @@ public class two_sum {
 
     /**
      * 思路：利用java自带DualPivotQuicksort排序,虽然系统排序算法快，时间复杂度为O(nlogn)
-     * 执行用时 :2 ms,
-     * 在所有 java 提交中击败了99.36%的用户
-     * 内存消耗 :37.4 MB,在所有 Java 提交中击败了88.96%
+     * 2 ms,99.36%,37.4 MB,88.96%
      */
     public int[] twoSum_v1(int[] nums, int target) {
         int m = 0, n = 0, k;
@@ -50,9 +48,7 @@ public class two_sum {
 
     /**
      * 思路：进一步优化，减少T(n)
-     * 执行用时 :2 ms,
-     * 在所有 java 提交中击败了99.39%的用户
-     * 内存消耗 :38.3 MB,在所有 Java 提交中击败了70.04%
+     * 2 ms,99.39%,38.3 MB,70.04%
      */
     public static int[] twoSum_v2(int[] nums, int target) {
         int m = 0, n = 0, k;
@@ -96,10 +92,8 @@ public class two_sum {
 
 
     /**
-     * 思路：哈希查询
-     * 执行用时 :2 ms,
-     * 在所有 java 提交中击败了97.55%的用户
-     * 内存消耗 :37.1 MB,在所有 Java 提交中击败了92.13%
+     * 思路：哈希查询,
+     * 2 ms,97.55%,37.1 MB,92.13%
      */
     public int[] twoSum_v3(int[] nums, int target) {
         HashMap<Integer, Integer> hashmap = new HashMap<>();

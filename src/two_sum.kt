@@ -6,9 +6,7 @@ fun main() {
 }
 
 /**
- * 执行用时 :716 ms,
- * 在所有 Kotlin 提交中击败了5.24%的用户
- * 内存消耗 :37.2 MB, 在所有 Kotlin 提交中击败了40.34%的用户
+ * 716 ms,5.24%,37.2 MB,40.34%的用户
  */
 fun twoSum_v1(nums: IntArray, target: Int): IntArray {
     var value: IntArray = intArrayOf(0, 0)
@@ -30,9 +28,7 @@ fun twoSum_v1(nums: IntArray, target: Int): IntArray {
 
 /**
  * 思路：用空间换时间
- * 执行用时 :240 ms,
- * 在所有 Kotlin 提交中击败了47.18%的用户
- * 内存消耗 :36.7 MB, 在所有 Kotlin 提交中击败了47.18%的用户
+ * 240 ms,47.18%,36.7 MB,47.18%
  */
 fun twoSum_v2(nums: IntArray, target: Int): IntArray {
     var hashmap = hashMapOf<Int, Int>()
@@ -53,10 +49,8 @@ fun twoSum_v2(nums: IntArray, target: Int): IntArray {
 
 
 /**
- * 思路：变更为一次循环
- * 执行用时 :212 ms,
- * 在所有 Kotlin 提交中击败了89.92%的用户
- * 内存消耗 :36.7 MB, 在所有 Kotlin 提交中击败了47.18%的用户
+ * 思路：反向计算出差值，后匹配查询，变更为一次循环
+ * 212 ms,89.92%,36.7 MB,47.18%
  */
 fun twoSum_v0(nums: IntArray, target: Int): IntArray {
     var hashmap = hashMapOf<Int, Int>()
@@ -75,9 +69,7 @@ fun twoSum_v0(nums: IntArray, target: Int): IntArray {
 
 /**
  * 思路：indexof数组索引，indexOf循环遍历已经有O(n)，实际和暴力运算一样
- * 执行用时 :248 ms,
- * 在所有 Kotlin 提交中击败了34.44%的用户
- * 内存消耗 :36.7 MB, 在所有 Kotlin 提交中击败了47.18%的用户
+ * 248 ms,34.44%,36.7 MB,47.18%
  */
 fun twoSum_v4(nums: IntArray, target: Int): IntArray {
     for (index in nums.indices) {
@@ -92,9 +84,7 @@ fun twoSum_v4(nums: IntArray, target: Int): IntArray {
 
 /**
  * 思路：顺序排列找出索引位置，二次循环找出对应原索引
- * 执行用时 :212 ms,
- * 在所有 Kotlin 提交中击败了89.92%的用户
- * 内存消耗 :37 MB, 在所有 Kotlin 提交中击败了41.18%的用户
+ * 212 ms,89.92%,37 MB,41.18%
  */
 fun twoSum_v5(nums: IntArray, target: Int): IntArray {
     var m=-1

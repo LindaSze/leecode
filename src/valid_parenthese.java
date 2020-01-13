@@ -12,8 +12,7 @@ public class valid_parenthese {
 
     /**
      * 思路：固定好hashmap中的key,value；匹配栈顶的value,如果key不等于栈顶value对应的key则匹配失败；如果数据不是key则说明是value，压入栈中即可
-     * 3 ms,59.16%
-     * 34.3 MB, 85.22%
+     * 3 ms,59.16%,34.3 MB, 85.22%
      */
     public static boolean valid_parenthese_v0(String s) {
         HashMap<Character, Character> mappings = new HashMap<Character, Character>();
@@ -39,8 +38,7 @@ public class valid_parenthese {
 
 
     /**
-     * 3 ms,59.16%
-     * 32.1 MB, 87.02%
+     * 3 ms,59.16%,32.1 MB, 87.02%
      */
     public static boolean valid_parenthese_v2(String s) {
         if (s.length() == 0)

@@ -4,8 +4,7 @@ fun main() {
 }
 
 /**
- * 172 ms,63.64%
- * 31.4 MB, 100%
+ * 172 ms,63.64%,31.4 MB, 100%
  */
 fun valid_parentheses(s: String): Boolean {
     if (s.isEmpty())
