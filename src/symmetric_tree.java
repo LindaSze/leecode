@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class symmetric_tree {
 
     /**
@@ -15,14 +18,15 @@ public class symmetric_tree {
 
 
         System.out.println(symmetric_tree_v1(treeNode, treeNode));
+        System.out.println(symmetric_tree_v2(treeNode));
+
     }
 
 
     /**
-     * 对称树的概念是
-     * 以递归形式实现就是扩展化，
-     * 判定当前treenode节点是否一致，在判断
-     * @return
+     * 对称树的概念是镜像对称，扩展化是树不是节点，
+     * 然后判断子左树和子右数对称对称
+     * 以递归形式实现就是判定当前treenode节点是否一致，在判断左树==右树
      */
     public static boolean symmetric_tree_v1(TreeNode t1, TreeNode t2) {
         if (t1 == null && t2 == null)
@@ -34,6 +38,33 @@ public class symmetric_tree {
                 && symmetric_tree_v1(t1.left, t2.right);
     }
 
+
+    /**
+     * BFS-Breadth First Search,广度优先遍历
+     * 利用链表linklist循环遍历
+     * 取出节点,若相等则左右子结点反向插入,再循环匹配
+     * 直到队列为空时返回true，或者中间检测出不对称则为false
+     * 否则一直接续
+     * 1ms,59.01%,37.9,65.05%
+     */
+    public static boolean symmetric_tree_v2(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        q.add(root);
+        while (!q.isEmpty()) {
+            TreeNode t1 = q.poll();
+            TreeNode t2 = q.poll();
+            if (t1 == null && t2 == null) continue;
+            if (t1 == null || t2 == null) return false;
+            if (t1.val != t2.val) return false;
+            q.add(t1.left);
+            q.add(t2.right);
+            q.add(t1.right);
+            q.add(t2.left);
+        }
+        return true;
+
+    }
 
     //二叉树结构
     public static class TreeNode {
