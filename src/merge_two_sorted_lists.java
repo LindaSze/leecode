@@ -1,6 +1,11 @@
 import java.util.List;
 
 public class merge_two_sorted_lists {
+    /**
+     * 合并两个有序链表
+     * 输入：1->2->4, 1->3->4，输出：1->1->2->3->4->4
+     * LiseNode链表结构的连接问题
+     */
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
         l1.next = new ListNode(3);

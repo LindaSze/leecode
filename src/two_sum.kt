@@ -1,9 +1,19 @@
 fun main() {
     //v0,v5较优
-    var value = twoSum_v5(intArrayOf(2, 11,7,15), 9)
+    var value = twoSum_v5(intArrayOf(2, 11, 7, 15), 9)
     println("answer:" + value[0].toString() + "," + value[1])
 
+
+
+    run loop@{
+        listOf(1, 2, 3, 4, 5).forEach {
+            if (it == 3) return@loop // 从传入 run 的 lambda 表达式非局部返回
+            print(it)
+        }
+    }
+    print(" done with nested loop")
 }
+
 
 /**
  * 716 ms,5.24%,37.2 MB,40.34%的用户
@@ -87,13 +97,13 @@ fun twoSum_v4(nums: IntArray, target: Int): IntArray {
  * 212 ms,89.92%,37 MB,41.18%
  */
 fun twoSum_v5(nums: IntArray, target: Int): IntArray {
-    var m=-1
-    var n=-1
+    var m = -1
+    var n = -1
     var res = IntArray(2)
-    var temp =  nums.copyOf()
+    var temp = nums.copyOf()
 
     var i = 0
-    var j = nums.size-1
+    var j = nums.size - 1
     nums.sort()
     while (i < j) {
         if (nums[i] + nums[j] < target)
@@ -109,7 +119,7 @@ fun twoSum_v5(nums: IntArray, target: Int): IntArray {
 
     var index1 = -1
     var index2 = -1
-    for(k in nums.indices){
+    for (k in nums.indices) {
         if (temp[k] == nums[m] && index1 == -1 && k != index2) {
             index1 = k
         } else if (temp[k] == nums[n] && k != index1 && index2 == -1) {

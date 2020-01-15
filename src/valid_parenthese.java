@@ -4,6 +4,10 @@ import java.util.Stack;
 public class valid_parenthese {
 
 
+    /**
+     * 有效的括号
+     * 学习栈方式
+     */
     public static void main(String args[]) {
         String s = "";
         System.out.println("answer:" + valid_parenthese_v2(s));

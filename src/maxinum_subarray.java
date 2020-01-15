@@ -2,6 +2,11 @@ import sun.tools.jconsole.MaximizableInternalFrame;
 
 public class maxinum_subarray {
 
+    /**
+     *最大子序和
+     *求最大和的连续子数组（子数组最少包含一个元素），返回其和值
+     * 动态规划法和贪心法
+     */
     public static void main(String[] args) {
 
         int[] num = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
