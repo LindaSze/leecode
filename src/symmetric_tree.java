@@ -19,11 +19,9 @@ public class symmetric_tree {
 
 
     /**
-     * 对称树的概念是子树左右对称，所有左右子树都对称则是一颗对称二叉树
+     * 对称树的概念是
      * 以递归形式实现就是扩展化，
-     * 判定当前treenode节点是否一致，在判断left和right是否一致
-     * @param t1
-     * @param t2
+     * 判定当前treenode节点是否一致，在判断
      * @return
      */
     public static boolean symmetric_tree_v1(TreeNode t1, TreeNode t2) {
