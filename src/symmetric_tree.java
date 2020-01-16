@@ -40,8 +40,8 @@ public class symmetric_tree {
 
 
     /**
-     * BFS-Breadth First Search,广度优先遍历
-     * 利用链表linklist循环遍历
+     * BFS-Breadth First Search,广度优先遍历，每一次都是横扫
+     * 将其转换成链表linklist,循环遍历
      * 取出节点,若相等则左右子结点反向插入,再循环匹配
      * 直到队列为空时返回true，或者中间检测出不对称则为false
      * 否则一直接续
