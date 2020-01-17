@@ -3,9 +3,8 @@ import java.util.*;
 public class single_number {
     public static void main(String[] args) {
         System.out.println(single_number_v2(new int[]{1, 2, 3, 4, 1, 6, 3, 4, 2}));
-
-        System.out.println(single_number_v3(new Integer[]{1, 2, 3, 4, 1, 6, 3, 4, 2}));
-
+//        System.out.println(single_number_v3(new Integer[]{1, 2, 3, 4, 1, 6, 3, 4, 2}));
+        System.out.println(single_number_v0(new int[]{1, 2, 3, 4, 1, 6, 3, 4, 2}));
     }
 
     /**
@@ -63,5 +62,22 @@ public class single_number {
             sum2 += num;
         }
         return 2 * sum2 - sum;
+    }
+
+
+    /**
+     * 思路：XOR异或运算
+     * 不同为1，相同为0，最后计算出不同的那个值
+     * a⊕b⊕a=(a⊕a)⊕b=0⊕b=b
+     * 1ms,99.56%,39.3,.21.68%
+     */
+    public static int single_number_v0(int[] nums) {
+        int num = nums[0];
+        for (int i = 1, size = nums.length; i < size; i++) {
+            num = num ^ nums[i];
+        }
+
+        return num;
+
     }
 }
