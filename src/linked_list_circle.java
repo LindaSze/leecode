@@ -3,10 +3,16 @@ import java.util.HashSet;
 
 public class linked_list_circle {
 
+
     public static void main(String[] args) {
 
+        ListNode dot= new ListNode(1);
+        ListNode listNode = new ListNode(1);
+        listNode.next = dot;
+        listNode.next.next =new ListNode(1);
+        listNode.next.next.next = dot;
+        System.out.println(linked_list_circle_v0(listNode));
     }
-
 
     /**
      * 思路：匹配校验
@@ -63,7 +69,7 @@ public class linked_list_circle {
         if (head == null || head.next == null)
             return false;
 
-        while (head!=null&& head.next!=null) {
+        while (head != null && head.next != null) {
             if (head.next == head)
                 return true;
             else {
