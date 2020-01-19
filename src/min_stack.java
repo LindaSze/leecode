@@ -1,6 +1,10 @@
 import java.util.Stack;
 
 public class min_stack {
+    /**
+     * 设计一个结构支持push，pop，top 操作，并能检索到最小元素的栈。
+     *重点解决pop后如何更新当前最小值
+     */
     public static void main(String[] args) {
     }
 

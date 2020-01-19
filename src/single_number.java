@@ -1,6 +1,10 @@
 import java.util.*;
 
 public class single_number {
+    /**
+     * 出现一次的数字
+     * rt,其他每个元素均出现两次。找出只出现了一次的一个元素。
+     */
     public static void main(String[] args) {
         System.out.println(single_number_v2(new int[]{1, 2, 3, 4, 1, 6, 3, 4, 2}));
 //        System.out.println(single_number_v3(new Integer[]{1, 2, 3, 4, 1, 6, 3, 4, 2}));

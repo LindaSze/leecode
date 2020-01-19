@@ -3,6 +3,10 @@ import java.util.HashSet;
 
 public class linked_list_circle {
 
+    /**
+     * 环形链表
+     * 链表中有一个环，其尾部连接链表中的某个节点。
+     */
 
     public static void main(String[] args) {
 
