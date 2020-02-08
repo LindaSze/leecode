@@ -47,7 +47,7 @@ public class majority_element {
      * 思路：先按大小排序，寻找相应下表位置对应的元素
      * 因次数>n/2,所以无论基偶多数元素需出现次数=（n+1）/2,其一定处于下坐标nums.length/2上
      * 当然偶数情况时，则会是nums.length/2+1也是该元素
-     * 1,100%,42.7,6%
+     * 1ms,100%,42.7,6%
      */
     public static int majority_element_v2(int nums[]) {
         Arrays.sort(nums);
@@ -56,7 +56,7 @@ public class majority_element {
 
     /**
      * 思路： Boyer-Moore投票法，计算器
-     * 循环查询，是众数+1，非众数-1，计数器为0则更换众数，因出现次数肯定>n/2，所以循环完毕会得到最后结果
+     * 循环查询，是众数+1，非众数-1，计数器为0则更换众数，因出现次数肯定>n/2，保证了循环完毕会得到最后结果
      * 1ms,100%,42,5%
      */
     private static int majority_element_v0(int[] nums) {
