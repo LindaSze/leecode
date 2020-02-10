@@ -95,7 +95,6 @@ public class majority_element {
         return count;
     }
 
-
     private static int majority_element_v4(int[] nums, int lo, int hi) {
         if (lo == hi) {
             return nums[lo];

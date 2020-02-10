@@ -36,7 +36,7 @@ public class hourse_robber {
     /**
      * 解题思路：动态规划法
      * 对于n=3时，要么n1+n3，要么选择n2,所以得出公式f(k) = max(f(n – 2) +n, f(n – 1))
-     * 选择 f(–1) = f(0) = 0 为初始情况，preMax和curMax分别保存对应的值
+     * 设定f(–1) = f(0) = 0为初始情况来优化代码，preMax和curMax分别保存对应的值，循环替换
      * 0ms,100%,34,61%
      */
     public static int hourse_robber_v0(int[] nums) {
