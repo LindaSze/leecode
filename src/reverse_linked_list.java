@@ -1,6 +1,8 @@
-import java.util.ArrayList;
-
 public class reverse_linked_list {
+    /**
+     * 反转链表
+     * 输入: 1->2->3->4->5->NULL，输出: 5->4->3->2->1->NULL
+     */
     public static void main(String[] args) {
         ListNode listNode = new ListNode(1);
         listNode.next = new ListNode(2);
@@ -43,6 +45,7 @@ public class reverse_linked_list {
      * 即链表可能是不同的序列指向，但节点只能是那4个节点
      * p是反转完毕的链表头结点，head.next是已经反转链表的尾结点，然后通过指定尾节点的next节点的方式，即设置head.next.next从而将新的节点加入反转链表中，然后返回表头即可
      * 注意将尾节点的next置位null,不然将死循环
+     * 0ms
      */
     public static ListNode reserve_linked_list_v0(ListNode head) {
         if (head == null || head.next == null) return head;
