@@ -1,23 +1,23 @@
-public class reverse_linked_list {
-    /**
-     * 反转链表
-     * 输入: 1->2->3->4->5->NULL，输出: 5->4->3->2->1->NULL
-     */
-    public static void main(String[] args) {
-        ListNode listNode = new ListNode(1);
-        listNode.next = new ListNode(2);
-        listNode.next.next = new ListNode(3);
-        listNode.next.next.next = new ListNode(4);
+    public class reverse_linked_list {
+        /**
+         * 反转链表
+         * 输入: 1->2->3->4->5->NULL，输出: 5->4->3->2->1->NULL
+         */
+        public static void main(String[] args) {
+            ListNode listNode = new ListNode(1);
+            listNode.next = new ListNode(2);
+            listNode.next.next = new ListNode(3);
+            listNode.next.next.next = new ListNode(4);
 
-        reserve_linked_list_v0(listNode);
-    }
+            reserve_linked_list_v1(listNode);
+        }
 
-    static class ListNode {
-        ListNode next;
-        int val;
+        static class ListNode {
+            ListNode next;
+            int val;
 
-        ListNode(int value) {
-            this.val = value;
+            ListNode(int value) {
+                this.val = value;
         }
     }
 
